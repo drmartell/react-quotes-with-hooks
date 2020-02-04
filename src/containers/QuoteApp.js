@@ -23,9 +23,9 @@ export default class QuoteApp extends React.Component {
     const { quote } = this.state;
 
     return (
-      <div style={{ display: 'flex', 'justify-content': 'center', 'flex-direction': 'column' }}>
-        <Quote {...quote} style={{ display: 'flex', 'justify-content': 'center' }} />
-        <Button text="Get a new one" onClick={this.fetch} style={{ 'align-self': 'center' }} />
+      <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+        <Quote {...quote} style={{ display: 'flex', justifyContent: 'center' }} />
+        <Button text="Get a new one" onClick={this.fetch} style={{ alignSelf: 'center' }} />
       </div>
     );
   }
