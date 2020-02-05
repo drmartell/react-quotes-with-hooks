@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import Quote from './Quote';
-import Button from '../components/Button';
+import React from 'react';
 import Character from '../components/Character';
 import characters from '../services/characters.json';
 import useQuotes from '../Hooks/useQuotes';
 import QuotesDisplay from '../components/QuotesDisplay';
 
 const QuoteApp = () => {
-  const { setCharacter, setNumber, displayQuotes } = useQuotes;
-  console.log('displayQuotes', displayQuotes);
-  const characterRadioButtons = characters.map((character, i) => (
-    <Character key={i} name={character.name} img={character.img} onClick={() => setCharacter(character)}/>
+  const { character, setCharacter, setNumber, displayQuotes } = useQuotes();
+  const characterRadioButtons = characters.map((mappedCharacter, i) => (
+    <Character key={i} character={character} name={mappedCharacter.name} img={mappedCharacter.img} onChange={() => setCharacter(mappedCharacter)} />
   ));
 
   return (
@@ -23,7 +20,7 @@ const QuoteApp = () => {
           <option value="3">3</option>
         </select>
       </div>
-      {/* <QuotesDisplay quotesArray={displayQuotes} /> */}
+      <QuotesDisplay quotesArray={displayQuotes} />
     </section>
   );
 };

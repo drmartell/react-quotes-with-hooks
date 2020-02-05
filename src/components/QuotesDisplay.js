@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const QuotesDisplay = ({ quotesArray }) => ( 
   <pre>
-    {quotesArray.map((quote, i) => <p key={i}>{quote}</p>)}
+    {quotesArray.map((quote, i) => <p key={i}>{quote.text}</p>)}
   </pre>
 );
 
