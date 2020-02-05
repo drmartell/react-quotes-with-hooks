@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Character = ({ name, img, onChange }) => (
   <>
-    <input type="radio" name="character" id={name} onChange={onChange} />
+    <input type="radio" name="character" id={name} onChange={onChange} checked={name === 'Bender'} />
     <label htmlFor={name}><img src={img} height='200px' /></label>
   </>
 );
