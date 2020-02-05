@@ -4,25 +4,27 @@ import { fetchByCharacter } from '../services/api';
 export const useQuotes = () => {
   const [character, setCharacter] = useState('');
   const [number, setNumber] = useState(0);
-
-  let allQuotes = [];
+  const [thisQuotes, setThisQuotes] = useState([]);
+  const [displayQuotes, setDisplayQuotes] = useState([]);
 
   useEffect(() => {
     fetchByCharacter(character.name)
-      .then(quotes => allQuotes = quotes);
+      .then(setThisQuotes);
   }, [character]);
 
-  const getRandomQuotes = (quotes, number) => {
+  const getRandomQuotes = number => {
     const randomQuotes = [];
-    const quotesCopy = quotes.slice();
+    const quotesCopy = thisQuotes.slice();
     while(randomQuotes.length < number){
       const randomIndex = Math.floor(Math.random() * (quotesCopy.length - 1));
       randomQuotes.push(quotesCopy.splice(randomIndex, 1));
     }
+    return randomQuotes;
   };
 
-  const changeCharacter = character => setCharacter(character);
-  const changeNumber = number => setNumber(number);
+  useEffect(() => {
+    setDisplayQuotes(getRandomQuotes(number));
+  }, [number]);
 
-  return { character, changeCharacter, number, changeNumber };
+  return { character, setCharacter, number, setNumber, thisQuotes, displayQuotes };
 };

@@ -1,0 +1,23 @@
+{ "characters": [
+  {
+      "name": "Bender",
+      "img": "https://res.cloudinary.com/dzxqhkyqd/image/fetch/c_scale,w_500/https://res.cloudinary.com/dzxqhkyqd/image/upload/v1552429540/bender.png"
+  },
+  {
+      "name": "Fry",
+      "img": "https://res.cloudinary.com/dzxqhkyqd/image/upload/v1554904133/fry.png"
+  },
+  {
+      "name": "Leela",
+      "img": "https://res.cloudinary.com/dzxqhkyqd/image/upload/v1554904145/leela.png"
+  },
+  {
+      "name": "Professor-Farnsworth",
+      "img": "https://res.https://res.cloudinary.com/dzxqhkyqd/image/upload/v1554904014/farnsworth.pngcloudinary.com/dzxqhkyqd/image/upload/v1554904145/leela.png"
+  },
+  {
+      "name": "Zapp-Brannigan",
+      "img": "https://res.cloudinary.com/dzxqhkyqd/image/upload/v1554904049/Zapp_Brannigan.png"
+  }
+  ]
+}

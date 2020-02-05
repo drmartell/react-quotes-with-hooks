@@ -2,22 +2,22 @@ import React, { useState, useEffect } from 'react';
 import Quote from './Quote';
 import { Button } from '../components/Button';
 import { Character } from '../components/Character';
-import { fetchByCharacter } from '../services/api';
-import characters from '../services/characters';
+import characters from '../services/characters.json';
+import { useQuotes } from '../Hooks/useQuotes';
 
-export const QuoteAppFn = () => {
-  const fetch = () => fetchByCharacter()
-    .then(quote => setQuote(quote));
+export const QuoteApp = () => {
 
-  useEffect(() => fetch(), []);
+  const { character, setCharacter, number, setNumber, thisQuotes, displayQuotes } = useQuotes;
 
   const characterRadioButtons = characters.map((character, i) => (
-    <Character name={character.name} img={character.img} />
+    <Character key={i} name={character.name} img={character.img} onClick={() => setCharacter(character)}/>
   ));
 
   return (
     <section>
       {characterRadioButtons}
+      // number dropdown onChange () => setNumber
+      // quote display area
     </section>
   );
 };
