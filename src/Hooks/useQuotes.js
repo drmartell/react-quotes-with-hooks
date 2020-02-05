@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { fetchByCharacter } from '../services/api';
 
-export const useQuotes = () => {
-  const [character, setCharacter] = useState('');
+const useQuotes = () => {
+  const [character, setCharacter] = useState({ name: '', img: '' });
   const [number, setNumber] = useState(0);
   const [thisQuotes, setThisQuotes] = useState([]);
   const [displayQuotes, setDisplayQuotes] = useState([]);
-
+  
   // when character changes, fetch all the quotes by that character
   useEffect(() => {
     fetchByCharacter(character.name)
@@ -29,3 +29,5 @@ export const useQuotes = () => {
 
   return { setCharacter, setNumber, displayQuotes };
 };
+
+export default useQuotes;
