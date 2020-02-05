@@ -7,6 +7,7 @@ export const useQuotes = () => {
   const [thisQuotes, setThisQuotes] = useState([]);
   const [displayQuotes, setDisplayQuotes] = useState([]);
 
+  // when character changes, fetch all the quotes by that character
   useEffect(() => {
     fetchByCharacter(character.name)
       .then(setThisQuotes);
@@ -26,5 +27,5 @@ export const useQuotes = () => {
     setDisplayQuotes(getRandomQuotes(number));
   }, [number]);
 
-  return { character, setCharacter, number, setNumber, thisQuotes, displayQuotes };
+  return { setCharacter, setNumber, displayQuotes };
 };

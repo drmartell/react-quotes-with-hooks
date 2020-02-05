@@ -4,10 +4,11 @@ import { Button } from '../components/Button';
 import { Character } from '../components/Character';
 import characters from '../services/characters.json';
 import { useQuotes } from '../Hooks/useQuotes';
+import QuotesDisplay from '../components/QuotesDisplay';
 
 export const QuoteApp = () => {
 
-  const { character, setCharacter, number, setNumber, thisQuotes, displayQuotes } = useQuotes;
+  const { setCharacter, setNumber, displayQuotes } = useQuotes;
 
   const characterRadioButtons = characters.map((character, i) => (
     <Character key={i} name={character.name} img={character.img} onClick={() => setCharacter(character)}/>
@@ -16,8 +17,8 @@ export const QuoteApp = () => {
   return (
     <section>
       {characterRadioButtons}
-      // number dropdown onChange () => setNumber
-      // quote display area
+      <input type="number-drop-down-of-some-kind" onChange={({ target }) => setNumber(target.value)}/>
+      <QuotesDisplay quotes={displayQuotes} />
     </section>
   );
 };
