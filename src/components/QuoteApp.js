@@ -16,7 +16,13 @@ const QuoteApp = () => {
   return (
     <section>
       {characterRadioButtons}
-      <input type="number-drop-down-of-some-kind" onChange={({ target }) => setNumber(target.value)}/>
+      <div>
+        <select onChange={({ target }) => setNumber(target.value)}>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
       {/* <QuotesDisplay quotesArray={displayQuotes} /> */}
     </section>
   );
