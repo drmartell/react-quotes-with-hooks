@@ -9,14 +9,11 @@ export const QuoteAppFn = () => {
     text: '',
     img: ''
   });
-  
 
   const fetch = () => fetchQuote()
     .then(quote => setQuote(quote));
 
-  useEffect(() => {
-    fetch();
-  }, []);
+  useEffect(() => fetch(), []);
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
