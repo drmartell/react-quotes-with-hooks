@@ -1,6 +1,14 @@
 import React from 'react';
+// import QuoteApp from '../containers/QuoteApp';
+// import { QuoteAppFn } from '../components/QuoteAppFn';
+import QuoteApp from '../components/QuoteApp';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      {/* <QuoteApp /> */}
+      {/* <QuoteAppFn /> */}
+      <QuoteApp />
+    </>
+  );
 }
-  
